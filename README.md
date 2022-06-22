@@ -12,7 +12,7 @@ TU-Korea Engineering House Raspberry Pi course project
 - <img src="https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=MySQL&logocolor=black"/>
 - <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=Python&logoColor=black"/>
 
-## What it looks likes
+## What it looks like
 
 ### Home Screen
 <img src = "image/home.gif" width="250"/><br/>
