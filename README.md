@@ -22,3 +22,9 @@ TU-Korea Engineering House Raspberry Pi course project
 
 ### Raspberry Pi
 <img src = "image/raspberryPi.png" width="500">
+
+## What will be added
+
+- Conversion from <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=JavaScript&logoColor=black"/>
+to <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=TypeScript&logoColor=black"/><br/>
+- Refactoring
