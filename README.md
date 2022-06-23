@@ -12,6 +12,16 @@ TU-Korea Engineering House Raspberry Pi course project
 - <img src="https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=MySQL&logocolor=black"/>
 - <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=Python&logoColor=black"/>
 
+## Sensors
+- MQ-135
+- DHT-11
+
+## Raspberry Pi Library
+- Adafruit
+
+## Raspberry Pi Code
+- Original Code: https://github.com/KRIPT4/MQ135-ADS1115-Python
+
 ## What it looks like
 
 ### Home Screen
