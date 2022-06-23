@@ -8,6 +8,7 @@ import digitalio
 import board
 import adafruit_mcp3xxx.mcp3008 as MCP
 from adafruit_mcp3xxx.analog_in import AnalogIn
+import env.server_url as ip
 sensor = Adafruit_DHT.DHT11
 pin = 4
 
@@ -63,6 +64,8 @@ chan0 = AnalogIn(mcp, MCP.P0)
 
 humidity, temperature = Adafruit_DHT.read_retry(sensor, pin)
 
+url = ip.server
+
 while (True):
     if humidity is not None and temperature is not None:
         print(temperature)
@@ -78,7 +81,7 @@ while (True):
     ppm = getPPM(PARA,RZERO,PARB,value_pin,RLOAD)
     correctedPPM = getCorrectedPPM(temperature,humidity,CORA,CORB,CORC,CORD,CORE,CORF,CORG,value_pin,RLOAD,PARA,RZERO,PARB)
     print('CO2: %s ppm' % round(correctedPPM))
-    request1 = requests.post('http://3.35.57.189:8080/home-sensor/rpi/temperature/', json={"value": temperature})
-    request1 = requests.post('http://3.35.57.189:8080/home-sensor/rpi/humidity/', json={"value": humidity})
-    request3 = requests.post('http://3.35.57.189:8080/home-sensor/rpi/co2', json={"value": round(correctedPPM)})
+    request1 = requests.post(url+'/rpi/temperature/', json={"value": temperature})
+    request1 = requests.post(url+'/rpi/humidity/', json={"value": humidity})
+    request3 = requests.post(url+'/rpi/co2', json={"value": round(correctedPPM)})
     time.sleep(60)
