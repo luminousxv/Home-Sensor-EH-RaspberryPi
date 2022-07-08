@@ -12,6 +12,15 @@ TU-Korea Engineering House Raspberry Pi course project
 - <img src="https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=MySQL&logocolor=black"/>
 - <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=Python&logoColor=black"/>
 
+## Mobile Application Libraries
+- [React Navigation](https://reactnavigation.org)
+- [react-native-picker](https://github.com/react-native-picker/picker)
+- [react-native-geolocation](https://www.npmjs.com/package/react-native-geolocation-service)
+- [react-native-chart-kit](https://github.com/indiespirit/react-native-chart-kit)
+
+## Public API
+- [기상청 단기예보 ((구)동네예보) 조회서비스](https://www.data.go.kr/tcs/dss/selectApiDataDetailView.do?publicDataPk=15084084)
+
 ## Sensors
 - MQ-135
 - DHT-11
@@ -35,6 +44,6 @@ TU-Korea Engineering House Raspberry Pi course project
 
 ## What will be added
 
-- Conversion from <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=JavaScript&logoColor=black"/>
-to <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=TypeScript&logoColor=black"/><br/>
+- <strike>Conversion from <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=JavaScript&logoColor=black"/>
+to <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=TypeScript&logoColor=black"/><br/></strike> Done at 2022.07.08
 - Refactoring
