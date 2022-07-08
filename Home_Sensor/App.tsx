@@ -55,7 +55,11 @@ export default function App() {
           pos => {
             setLatitude(pos.coords.latitude);
             setLongitude(pos.coords.longitude);
-            const rs: Grid = dfs_xy_conv('toXY', latitude, longitude);
+            const rs: Grid = dfs_xy_conv(
+              'toXY',
+              latitude as number,
+              longitude as number,
+            );
             // setRealdata(rs.x, rs.y); for Device only
             setRealdata(57, 121); // for emulator
           },
