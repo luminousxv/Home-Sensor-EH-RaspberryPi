@@ -18,3 +18,25 @@ export type Props = DrawerScreenProps<RootDrawerParamList, 'Home'>;
 export type HomeScreenNavigationProp = Props['navigation'];
 
 export type HomeScreenRouteProp = Props['route'];
+
+export type navProps = {
+  time: string[];
+  value: number[];
+  selected: number;
+};
+
+export interface TempHumid {
+  temperature: number;
+  humidity: number;
+  realtemp: number;
+  realhumid: number;
+}
+
+export interface RouteParams extends TempHumid {
+  co2: number;
+}
+
+export type HomeProps = {
+  navigation: HomeScreenNavigationProp;
+  route: HomeScreenRouteProp;
+};
