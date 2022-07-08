@@ -9,20 +9,18 @@ export const CO2Average = (): ReactElement => {
   const [time, setTime] = useState<string[]>([]);
   const [value, setValue] = useState<number[]>([0]);
 
-  const getCO2DataAPI = async (): Promise<void> => {
-    try {
-      const data: Data = await fetch(
-        'http://3.35.57.189:8080/Home-Sensor/co2/get-data',
-      ).then(res => res.json());
-      return getTimeAndValue(data);
-    } catch {
-      console.log('error');
-    }
-  };
-
   useEffect(() => {
+    const getCO2DataAPI = async (): Promise<void> => {
+      try {
+        const data: Data = await fetch(
+          'http://3.35.57.189:8080/Home-Sensor/co2/get-data',
+        ).then(res => res.json());
+        return getTimeAndValue(data);
+      } catch {
+        console.log('error');
+      }
+    };
     getCO2DataAPI();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const getTimeAndValue = (data: Data): void => {

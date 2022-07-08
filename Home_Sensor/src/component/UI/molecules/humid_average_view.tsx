@@ -10,20 +10,18 @@ export const HumidAverage = (): ReactElement => {
   const [value, setValue] = useState<number[]>([0]);
 
   useEffect(() => {
+    const getHumidDataAPi = async (): Promise<void> => {
+      try {
+        const data: Data = await fetch(
+          'http://3.35.57.189:8080/Home-Sensor/humidity/get-data',
+        ).then(res => res.json());
+        return getTimeAndValue(data);
+      } catch {
+        console.log('errer');
+      }
+    };
     getHumidDataAPi();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  const getHumidDataAPi = async (): Promise<void> => {
-    try {
-      const data: Data = await fetch(
-        'http://3.35.57.189:8080/Home-Sensor/humidity/get-data',
-      ).then(res => res.json());
-      return getTimeAndValue(data);
-    } catch {
-      console.log('errer');
-    }
-  };
 
   const getTimeAndValue = (data: Data) => {
     data.data.map(item => setTime(prev => [...prev, item.Time]));

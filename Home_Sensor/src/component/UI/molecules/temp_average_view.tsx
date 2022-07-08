@@ -10,20 +10,18 @@ export const TempAverage = (): ReactElement => {
   const [value, setValue] = useState<number[]>([0]);
 
   useEffect(() => {
+    const getTempDataAPI = async (): Promise<void> => {
+      try {
+        const data: Data = await fetch(
+          'http://3.35.57.189:8080/Home-Sensor/temperature/get-data',
+        ).then(res => res.json());
+        return getTimeAndValue(data);
+      } catch {
+        console.log('error');
+      }
+    };
     getTempDataAPI();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  const getTempDataAPI = async (): Promise<void> => {
-    try {
-      const data: Data = await fetch(
-        'http://3.35.57.189:8080/Home-Sensor/temperature/get-data',
-      ).then(res => res.json());
-      return getTimeAndValue(data);
-    } catch {
-      console.log('error');
-    }
-  };
 
   const getTimeAndValue = (data: Data): void => {
     data.data.map(item => setTime(prev => [...prev, item.Time]));
