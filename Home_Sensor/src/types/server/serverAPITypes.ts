@@ -4,3 +4,12 @@ export interface Sensor {
   Temperature: number;
   Humidity: number;
 }
+
+export interface Data {
+  data: ValueArray[];
+}
+
+interface ValueArray {
+  Time: string;
+  Value: number;
+}
