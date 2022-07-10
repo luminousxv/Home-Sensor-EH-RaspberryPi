@@ -3,8 +3,8 @@ import 'react-native-gesture-handler';
 import {View} from 'react-native';
 import {Average} from '../UI/molecules/average_view';
 
-export default function HumidityScreen(): ReactElement {
-  const [type] = useState<string>('humid');
+export default function AirQCScreen(): ReactElement {
+  const [type] = useState<string>('air');
   return (
     <View>
       <>

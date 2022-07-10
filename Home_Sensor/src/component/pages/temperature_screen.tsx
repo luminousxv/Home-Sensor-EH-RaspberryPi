@@ -1,13 +1,14 @@
-import React, {ReactElement} from 'react';
+import React, {ReactElement, useState} from 'react';
 import 'react-native-gesture-handler';
 import {View} from 'react-native';
-import {TempAverage} from '../UI/molecules/temp_average_view';
+import {Average} from '../UI/molecules/average_view';
 
 export default function TemperatureScreen(): ReactElement {
+  const [type] = useState<string>('temp');
   return (
     <View>
       <>
-        <TempAverage />
+        <Average type={type} />
       </>
     </View>
   );
