@@ -13,11 +13,11 @@ export type RootDrawerParamList = {
   종합공기질: undefined;
 };
 
-export type Props = DrawerScreenProps<RootDrawerParamList, 'Home'>;
+type Home_Props = DrawerScreenProps<RootDrawerParamList, 'Home'>;
 
-export type HomeScreenNavigationProp = Props['navigation'];
+export type HomeNavigationProp = Home_Props['navigation'];
 
-export type HomeScreenRouteProp = Props['route'];
+export type HomeRouteProp = Home_Props['route'];
 
 export type navProps = {
   time: string[];
@@ -36,7 +36,11 @@ export interface RouteParams extends TempHumid {
   co2: number;
 }
 
-export type HomeProps = {
-  navigation: HomeScreenNavigationProp;
-  route: HomeScreenRouteProp;
+export interface ScreenParams {
+  type: string;
+}
+
+export type Home_Screen_Props = {
+  navigation: HomeNavigationProp;
+  route: HomeRouteProp;
 };
