@@ -2,13 +2,16 @@ import React, {ReactElement} from 'react';
 import 'react-native-gesture-handler';
 import {StyleSheet, View, Text, TouchableOpacity} from 'react-native';
 import {TempView} from '../UI/atoms/temp_view';
-import {CO2View} from '../UI/atoms/co2_view';
-import {HomeProps, RouteParams} from '../../types/navigation/navigationTypes';
+import {AirQCView} from '../UI/atoms/airQC_view';
+import {
+  Home_Screen_Props,
+  RouteParams,
+} from '../../types/navigation/navigationTypes';
 
 export default function HomeScreen({
   navigation,
   route,
-}: HomeProps): ReactElement {
+}: Home_Screen_Props): ReactElement {
   const {temperature, co2, humidity, realtemp, realhumid}: RouteParams =
     route.params;
   return (
@@ -37,7 +40,7 @@ export default function HomeScreen({
       </View>
       <View style={styles.co2container}>
         <>
-          <CO2View co2={co2} />
+          <AirQCView co2={co2} />
         </>
         <View style={styles.buttonview}>
           <TouchableOpacity
