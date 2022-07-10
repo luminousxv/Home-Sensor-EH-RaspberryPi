@@ -31,6 +31,9 @@ TU-Korea Engineering House Raspberry Pi course project
 ## Raspberry Pi Code
 - Original Code: https://github.com/KRIPT4/MQ135-ADS1115-Python
 
+## React Native Project Structure
+<img src = "image/project_structure.png"><br/>
+
 ## What it looks like
 
 ### Home Screen
