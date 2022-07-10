@@ -20,7 +20,7 @@ import {createDrawerNavigator} from '@react-navigation/drawer';
 import SplashScreen from 'react-native-splash-screen';
 import HomeScreen from './src/component/pages/home';
 import TemperatureScreen from './src/component/pages/temperature_screen';
-import CO2Screen from './src/component/pages/CO2';
+import AirQCScreen from './src/component/pages/airQC_screen';
 import HumidityScreen from './src/component/pages/humidity_screen';
 import {LoadingScreen} from './src/component/pages/loading';
 import {dfs_xy_conv} from './src/utils/grid';
@@ -29,7 +29,7 @@ import {Forecast, Grid} from './src/types/server/publicAPITypes';
 import {Sensor} from './src/types/server/serverAPITypes';
 import {
   RootDrawerParamList,
-  HomeScreenNavigationProp,
+  HomeNavigationProp,
 } from './src/types/navigation/navigationTypes';
 
 const Drawer = createDrawerNavigator<RootDrawerParamList>();
@@ -44,7 +44,6 @@ export default function App() {
   const [realhumid, setRealHumid] = useState<number>(0);
   const [latitude, setLatitude] = useState<number | null>();
   const [longitude, setLongitude] = useState<number | null>();
-
   //const route = useRoute<HomeScreenRouteProp>();
 
   useEffect(() => {
@@ -127,7 +126,7 @@ export default function App() {
   };
 
   const HeaderRight = () => {
-    const navigation = useNavigation<HomeScreenNavigationProp>();
+    const navigation = useNavigation<HomeNavigationProp>();
     return (
       <Button
         title="새로고침"
@@ -166,7 +165,7 @@ export default function App() {
           />
           <Drawer.Screen name="온도" component={TemperatureScreen} />
           <Drawer.Screen name="습도" component={HumidityScreen} />
-          <Drawer.Screen name="종합공기질" component={CO2Screen} />
+          <Drawer.Screen name="종합공기질" component={AirQCScreen} />
         </Drawer.Navigator>
       </NavigationContainer>
     );
