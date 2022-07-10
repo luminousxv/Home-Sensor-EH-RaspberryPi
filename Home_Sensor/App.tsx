@@ -24,7 +24,8 @@ import AirQCScreen from './src/component/pages/airQC_screen';
 import HumidityScreen from './src/component/pages/humidity_screen';
 import {LoadingScreen} from './src/component/pages/loading';
 import {dfs_xy_conv} from './src/utils/grid';
-import {getForecastAPI} from './src/api/forecast';
+import {getForecastAPI, getPublicURL} from './src/api/forecast';
+import {getServerURL} from './src/api/serverURL';
 import {Forecast, Grid} from './src/types/server/publicAPITypes';
 import {Sensor} from './src/types/server/serverAPITypes';
 import {
@@ -73,9 +74,8 @@ export default function App() {
 
   const setRealdata = async (nx: number, ny: number): Promise<void> => {
     const query: string = getForecastAPI(nx, ny);
-    const url: string =
-      'http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getUltraSrtNcst?' +
-      query;
+    const baseurl: string = getPublicURL();
+    const url: string = baseurl + query;
     try {
       const response: Forecast = await fetch(url, {
         headers: {
@@ -104,9 +104,8 @@ export default function App() {
 
   const getsensorAPI = async (): Promise<void> => {
     try {
-      const response = await fetch(
-        'http://3.35.57.189:8080/Home-Sensor/sensor',
-      );
+      const serverURL: string = getServerURL();
+      const response = await fetch(serverURL);
       const json: Sensor = await response.json();
       return setValue(json), setLoading(true);
     } catch (error) {
